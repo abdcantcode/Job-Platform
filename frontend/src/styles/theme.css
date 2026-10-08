@@ -1,0 +1,188 @@
+/* ------------------------------------------------------------------
+   Design tokens. Cool ink-navy neutrals, one blue accent (focus, links,
+   the current period in charts). Status colors are validated for
+   colorblind separation and contrast in both themes.
+------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+
+  --font-body: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+
+  --bg: #eef1f5;
+  --surface: #ffffff;
+  --surface-2: #f5f7fa;
+  --surface-3: #e9edf3;
+  --border: #dde2ea;
+  --border-strong: #c5ccd8;
+
+  --text: #0f1b2d;
+  --text-muted: #4d596c;
+  --text-faint: #667386;
+
+  --primary: #0f1b2d;
+  --primary-hover: #1f2f48;
+  --on-primary: #f4f7fb;
+
+  --accent: #2559d6;
+  --accent-soft: #e4ecfc;
+
+  --danger: #bf3249;
+  --danger-soft: #fbe8ec;
+
+  --track: #e1e6ee;
+  --bar: #b9c3d3;
+
+  --applied: #3f6fd0;
+  --applied-fg: #2a56ad;
+  --applied-bg: #e8eefb;
+  --interview: #c58410;
+  --interview-fg: #86570a;
+  --interview-bg: #fbf1da;
+  --offer: #0f90a3;
+  --offer-fg: #0b6a79;
+  --offer-bg: #dff3f6;
+  --rejected: #cf4560;
+  --rejected-fg: #a32a41;
+  --rejected-bg: #fbe6ea;
+
+  --scrim: rgb(11 16 25 / 0.5);
+  --shadow-pop: 0 18px 48px -12px rgb(15 27 45 / 0.28), 0 4px 12px rgb(15 27 45 / 0.08);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0b1019;
+  --surface: #121927;
+  --surface-2: #171f2f;
+  --surface-3: #1e2839;
+  --border: #232d40;
+  --border-strong: #33415a;
+
+  --text: #e8edf6;
+  --text-muted: #a2aec2;
+  --text-faint: #8190a7;
+
+  --primary: #e8edf6;
+  --primary-hover: #ffffff;
+  --on-primary: #0b1019;
+
+  --accent: #7ba3ff;
+  --accent-soft: #172544;
+
+  --danger: #f0788c;
+  --danger-soft: #2d1620;
+
+  --track: #1c2638;
+  --bar: #3a4a66;
+
+  --applied: #5a86e0;
+  --applied-fg: #9bb9f2;
+  --applied-bg: #172544;
+  --interview: #b9851a;
+  --interview-fg: #e2b457;
+  --interview-bg: #2b2110;
+  --offer: #1c97a8;
+  --offer-fg: #6fd0df;
+  --offer-bg: #10282e;
+  --rejected: #dc5a74;
+  --rejected-fg: #f197a9;
+  --rejected-bg: #2e1720;
+
+  --scrim: rgb(0 0 0 / 0.62);
+  --shadow-pop: 0 18px 48px -12px rgb(0 0 0 / 0.7), 0 4px 12px rgb(0 0 0 / 0.4);
+}
+
+/* ------------------------------------------------------------------ Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 14px/1.5 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
